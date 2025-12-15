@@ -1,0 +1,114 @@
+/* ----------------------------------------
+   TAILWIND BASE
+-----------------------------------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------
+   GLOBAL RESET / FIXES
+-----------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent image dragging in UI */
+img,
+svg {
+  user-select: none;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Improve font rendering */
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background consistent with Figma */
+body {
+  background-color: #f5f5f5;
+  font-family: var(--font-sans, ui-sans-serif, system-ui);
+}
+
+/* ----------------------------------------
+   HIDING SCROLLBAR (used in deals sliders)
+-----------------------------------------*/
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* ----------------------------------------
+   CONTAINER WIDTH (matches Figma layout)
+-----------------------------------------*/
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ----------------------------------------
+   CARD SHADOW (Figma soft shadow)
+-----------------------------------------*/
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ----------------------------------------
+   Blue Theme (matches your Figma color)
+-----------------------------------------*/
+:root {
+  --cb-blue: #4A62F2;
+  --cb-dark-blue: #1d46d9;
+  --cb-light-gray: #f7f7f7;
+}
+
+/* ----------------------------------------
+   PRICE BADGE STYLE
+-----------------------------------------*/
+.price-badge {
+  background: var(--cb-blue);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ----------------------------------------
+   TAGS (ex: New, -40% badges)
+-----------------------------------------*/
+.badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+.badge-new {
+  background: #4a62f2;
+}
+.badge-sale {
+  background: #ffa41c;
+}
+
+/* ----------------------------------------
+   Figma-style section spacing
+-----------------------------------------*/
+.section {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
