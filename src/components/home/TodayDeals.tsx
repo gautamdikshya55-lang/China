@@ -41,10 +41,12 @@ const skinCare = [
 export default function TodayDeals() {
   return (
     <section className="max-w-[1440px] mx-auto px-4 mt-6">
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+
 
         {/* LEFT – TODAY DEAL */}
-        <div className="col-span-8 bg-white rounded-2xl p-6">
+        <div className="col-span-1 bg-white rounded-2xl p-4 lg:col-span-8 lg:p-6">
+
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-xl font-bold">Today’s Deal</h2>
             <div className="flex gap-2">
@@ -57,9 +59,14 @@ export default function TodayDeals() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+         <div className="flex gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible">
+
             {todayDeals.map((p) => (
-              <div key={p.id} className="border rounded-xl p-4 hover:shadow-md transition">
+             <div
+  key={p.id}
+  className="min-w-[160px] border rounded-xl p-4 hover:shadow-md transition lg:min-w-0"
+>
+
                 <div className="relative h-[180px] bg-gray-100 rounded-lg overflow-hidden">
                   <Image src={p.image} alt={p.name} fill className="object-contain" />
                 </div>
@@ -94,7 +101,8 @@ export default function TodayDeals() {
         </div>
 
         {/* RIGHT – SAME HEIGHT COLUMN */}
-        <div className="col-span-4 bg-white rounded-2xl p-6 flex flex-col justify-between">
+        <div className="col-span-1 bg-white rounded-2xl p-4 flex flex-col gap-6 lg:col-span-4 lg:p-6">
+
 
           {/* Skin Care Products */}
           <div>
@@ -110,7 +118,8 @@ export default function TodayDeals() {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+
               {skinCare.map((img, i) => (
                 <div
                   key={i}
@@ -128,7 +137,8 @@ export default function TodayDeals() {
           </div>
 
           {/* Shoes + Beds */}
-          <div className="grid grid-cols-2 gap-4 mt-6">
+         <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+
             <div className="bg-[#F8F8F8] rounded-2xl p-4 text-center">
               <h3 className="font-semibold text-sm mb-2">Shoes</h3>
               <Image src="/products/shoes/shoe-1.png" alt="" width={120} height={120} />
