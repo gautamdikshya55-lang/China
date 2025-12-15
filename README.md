@@ -20,10 +20,10 @@ Static JSON data for products
 
 #Setup instructions
 Clone the repository:
-git clone https://github.com/gautamdikshya55-lang/Chinabazzar.git
+[git clone https://github.com/gautamdikshya55-lang/Chinabazzar.git](https://github.com/gautamdikshya55-lang/China)
 
 #Navigate to the project folder:
-cd Chinabazzar
+cd CB
 
 #Install dependencies:
 npm install
@@ -65,14 +65,9 @@ No environment variables are required.
 Add external image domains in next.config.ts:
 
 images: 
-{
-  remotePatterns: [
-    { protocol: "https", hostname: "images.pexels.com" },
-    { protocol: "https", hostname: "upload.wikimedia.org" },
-    { protocol: "https", hostname: "i.ibb.co" },
-    { protocol: "https", hostname: "play-lh.googleusercontent.com" }
-  ]
-}
+This project uses only local images stored in the `/public` directory.
+
+No external image domains or Next.js image configuration is required.
 
 
 
@@ -115,31 +110,44 @@ Some Figma images were replaced with suitable Pexels images
 No backend or API integration was needed
 
 #Project structure
-Chinabazzar/
-Frontend/ Next.js application
-Chinabazzar/
-  src/
-    app/
-      layout.tsx
-      page.tsx
-    components/
-      layout/
-        Header.tsx
-        Footer.tsx
-      home/
-        MainHero.tsx
-        PromoGrid.tsx
-        SaleBanner.tsx
-        LiveSell.tsx
-        ProductStrip.tsx
-        MultiSaleBanner.tsx
-      ui/
-        ProductCard.tsx
-        SectionHeader.tsx
-    data/
-      homepage.ts
-  next.config.ts
-  package.json
-  tailwind.config.js
+CB/
+├── public/                     # Static assets (images, banners, icons)
+│   ├── assets/
+│   ├── banners/
+│   ├── header/
+│   ├── live/
+│   └── products/
+│
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   │
+│   ├── components/
+│   │   ├── home/               # Home page sections
+│   │   │   ├── BestDealsSection.tsx
+│   │   │   ├── CategoryNavigation.tsx
+│   │   │   ├── DownSaleBannerSection.tsx
+│   │   │   ├── FlashDeals.tsx
+│   │   │   ├── HeroBanner.tsx
+│   │   │   ├── LiveSell.tsx
+│   │   │   ├── SaleBannerSection.tsx
+│   │   │   ├── SaleStrips.tsx
+│   │   │   ├── SpecialOffers.tsx
+│   │   │   └── TodayDeals.tsx
+│   │   │
+│   │   └── layout/             # Layout components
+│   │       ├── Header.tsx
+│   │       └── Footer.tsx
+│
+├── .gitignore                  # Git ignore rules
+├── next-env.d.ts               # Next.js TypeScript definitions
+├── package.json                # Project dependencies & scripts
+├── package-lock.json           # Dependency lock file
+├── postcss.config.js           # PostCSS configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+└── tsconfig.json               # TypeScript configuration
+
 #About
 ChinaBazaar Homepage built with Next.js, React, and TailwindCSS as a conversion of the provided Figma design.
